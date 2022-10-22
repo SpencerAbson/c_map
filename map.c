@@ -105,7 +105,7 @@ static hashmap_t * _hashmap_grow(hashmap_t *map)
     new_map = hashmap_create(map->capacity * HASHMAP_GROW_FACTOR);
     if(!new_map) return NULL;
 
-    for(uint32_t i = 0; i < map->entries; i++)
+    for(uint32_t i = 0; i < map->capacity; i++)
     {
         if(map->buckets[i] != 0)
         {
